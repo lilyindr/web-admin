@@ -18,7 +18,7 @@ public class ControllerVCustomerRegistration {
 	ServiceVCustomerRegistration servVcrg;
 	
 	@GetMapping("/admin/getRegistrationById")
-	public List<VCustomerRegistration> getCcomListAll(BigDecimal regId){
+	public List<VCustomerRegistration> geVCustRegListAll(BigDecimal regId){
 		return servVcrg.getVCustomer(regId);
 	}
 	
