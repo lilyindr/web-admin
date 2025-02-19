@@ -17,9 +17,19 @@ public class ControllerVCustomerRegistration {
 	@Autowired
 	ServiceVCustomerRegistration servVcrg;
 	
+	@GetMapping("/admin/getRegistrationAll")
+	public List<VCustomerRegistration> geVCustRegListAll(){
+		return servVcrg.getVCustomerAll();
+	}
+	
 	@GetMapping("/admin/getRegistrationById")
-	public List<VCustomerRegistration> geVCustRegListAll(BigDecimal regId){
+	public List<VCustomerRegistration> geVCustRegListByID(BigDecimal regId){
 		return servVcrg.getVCustomer(regId);
+	}
+	
+	@GetMapping("/admin/SubmitRegistrationEmpl")
+	public String SubmitRegistEmpl(Integer p_userid, String p_id){
+		return servVcrg.SubmitRegVerEmpl(p_userid, p_id);
 	}
 	
 	
